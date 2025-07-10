@@ -1,0 +1,15 @@
+.players {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #54f55d;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.player {
+  background-color: #403b3b;
+  border-radius: 5px;
+  padding: 10px;
+  gap: 10px;
+}

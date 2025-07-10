@@ -1,0 +1,21 @@
+.player_time {
+  color: rgba(200, 185, 185, 0.5);
+}
+.player_active {
+  color: white;
+}
+.player_flag {
+  color: rgb(243, 9, 9);
+}
+.player_block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #fff;
+  gap: 10px;
+}
+.reyt {
+  color: #d7cece;
+  font-size: 18px;
+}

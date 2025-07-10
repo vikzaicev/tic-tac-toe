@@ -1,0 +1,27 @@
+.conteyner {
+  margin: 20px auto;
+}
+.info {
+  margin-bottom: 10px;
+}
+.current {
+  font-size: 20px;
+}
+.game {
+  border: 1px solid #beb3b3;
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+}
+.cell {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #beb3b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+}
