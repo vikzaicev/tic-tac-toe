@@ -8,8 +8,8 @@ const players = [
   { id: 3, name: "Kola", simbol: "z", reyt: 101 },
   { id: 4, name: "Masa", simbol: "a", reyt: 86 },
 ];
-export const Players = () => {
-  const { playerCount, currentMove } = useGameState();
+export const Players = ({ isWinner }) => {
+  const { playerCount, currentMove, handleIsTimeOver } = useGameState();
 
   return (
     <div className={styles.players}>
@@ -17,7 +17,10 @@ export const Players = () => {
         <div className={styles.player} key={player.id}>
           <Player
             player={player}
-            isTimerRunning={currentMove === player.simbol}
+            isTimerRunning={currentMove === player.simbol && !isWinner}
+            onTimeOver={() => {
+              handleIsTimeOver(player.simbol);
+            }}
           />
         </div>
       ))}

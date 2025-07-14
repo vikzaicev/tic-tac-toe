@@ -25,3 +25,9 @@
   font-size: 30px;
   line-height: 1;
 }
+.winner {
+  background-color: #c65b5b;
+}
+.simbol {
+  color: #e9dddd;
+}

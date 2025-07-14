@@ -4,20 +4,13 @@ import { useGameState } from "../../../useGameState";
 import { getNextMove } from "../../../utils";
 import clsx from "clsx";
 
-export const Player = ({ player, isTimerRunning }) => {
+export const Player = ({ player, isTimerRunning, onTimeOver }) => {
   const [seconds, setSeconds] = useState(30);
   const { playerCount, currentMove, setCurrentMove } = useGameState();
 
   const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
   const second = String(seconds % 60).padStart(2, "0");
-  if (second == 0) {
-    setCurrentMove((lastCurrentMove) => {
-      return {
-        ...lastCurrentMove,
-        currentMove: getNextMove(lastCurrentMove.currentMove, playerCount),
-      };
-    });
-  }
+
   const flagColor = second < 10;
   useEffect(() => {
     if (isTimerRunning) {
@@ -30,6 +23,11 @@ export const Player = ({ player, isTimerRunning }) => {
       };
     }
   }, [isTimerRunning]);
+  useEffect(() => {
+    if (seconds == 0) {
+      onTimeOver();
+    }
+  }, [seconds]);
   return (
     <div className={styles.player_block}>
       <div className={styles.player_info}>
