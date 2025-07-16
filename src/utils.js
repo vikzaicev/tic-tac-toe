@@ -6,7 +6,7 @@ export function getNextMove(currentMove, playerCount, playersIsTimeOver) {
   return slisedMoveOrder[nextIndex] ?? slisedMoveOrder[0];
 }
 
-export function computeWinner(cells, secvinceSize = 5, fieldSize = 10) {
+export function computeWinner(cells, secvinceSize = 3, fieldSize = 10) {
   const gap = Math.floor(secvinceSize / 2);
   function compareElements(indexes) {
     let resalt = true;

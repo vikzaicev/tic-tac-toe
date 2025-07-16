@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
 import { useGameState } from "../../../useGameState";
+import { UIModal } from "../../../UIkit/UIModal/UIModal";
 import clsx from "clsx";
 
 export const Game = () => {
@@ -19,6 +20,7 @@ export const Game = () => {
         <div className={styles.next}>Следующий : {nextMove}</div>
         {winnerSimbol && <div>Winner : {winnerSimbol}</div>}
       </div>
+      <UIModal />
       <div className={styles.game}>
         {cells.map((simbol, index) => (
           <GameCell
