@@ -1,12 +1,9 @@
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
-import { useGameState } from "../../../useGameState";
-import { getNextMove } from "../../../utils";
 import clsx from "clsx";
 
 export const Player = ({ player, isTimerRunning, onTimeOver }) => {
   const [seconds, setSeconds] = useState(30);
-  const { playerCount, currentMove, setCurrentMove } = useGameState();
 
   const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
   const second = String(seconds % 60).padStart(2, "0");
@@ -31,10 +28,19 @@ export const Player = ({ player, isTimerRunning, onTimeOver }) => {
   return (
     <div className={styles.player_block}>
       <div className={styles.player_info}>
-        <div className={styles.icon}></div>
-        <div className={styles.simbol}>{player.simbol}</div>
-        <div className={styles.name}>{player.name}</div>
-        <div className={styles.reyt}>рейтинг: {player.reyt}</div>
+        <div className={styles.avatar}>
+          <div className={styles.icon}>
+            <img className={styles.img} src={player.src} alt={player.name} />
+            <div className={styles.simbol}>
+              <img src={player.simbol} alt={player.simbol} />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.flex}>
+          <div className={styles.name}>{player.name}</div>
+          <div className={styles.reyt}>рейтинг: {player.reyt}</div>
+        </div>
       </div>
       <div
         className={clsx(

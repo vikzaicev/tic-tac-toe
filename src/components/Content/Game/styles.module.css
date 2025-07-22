@@ -4,8 +4,20 @@
 .info {
   margin-bottom: 10px;
 }
-.current {
+.current,
+.next,
+.winner1 {
   font-size: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+.winner1 {
+  margin-bottom: 40px;
+}
+.img {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
 }
 .game {
   border: 1px solid #beb3b3;

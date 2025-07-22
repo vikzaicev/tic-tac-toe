@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 import { useGameState } from "../../../useGameState";
 import { UIModal } from "../../../UIkit/UIModal/UIModal";
 import clsx from "clsx";
+import { CrossIcon } from "../../Icon";
 
 export const Game = () => {
   const {
@@ -16,9 +17,27 @@ export const Game = () => {
   return (
     <div className={styles.conteyner}>
       <div className={styles.info}>
-        <div className={styles.current}>Ход : {currentMove}</div>
-        <div className={styles.next}>Следующий : {nextMove}</div>
-        {winnerSimbol && <div>Winner : {winnerSimbol}</div>}
+        {!winnerSimbol && (
+          <div className="">
+            <div className={styles.current}>
+              Ход :
+              <div className={styles.img}>
+                <img src={currentMove} />
+              </div>
+            </div>
+            <div className={styles.next}>
+              Следующий :
+              <div className={styles.img}>
+                <img src={nextMove} />
+              </div>
+            </div>
+          </div>
+        )}
+        {winnerSimbol && (
+          <div className={styles.winner1}>
+            Winner : <img src={winnerSimbol} />
+          </div>
+        )}
       </div>
       <UIModal />
       <div className={styles.game}>
@@ -30,7 +49,11 @@ export const Game = () => {
             onClick={handleClickBtn}
             disabled={winnerSimbol}
           >
-            {simbol ?? <span>{simbol}</span>}
+            {<img src={simbol} /> ?? (
+              <span>
+                <img src={simbol} />
+              </span>
+            )}
           </GameCell>
         ))}
       </div>

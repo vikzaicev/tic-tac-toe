@@ -40,10 +40,12 @@ export const UIModal = ({ width = "md" }) => {
         )}
       >
         <ModalHeader>Игра закончена!</ModalHeader>
-        <ModalBodi>Победил: {winnerSimbol}</ModalBodi>
+        <ModalBodi>
+          Победил: <img src={winnerSimbol} alt="winner" />
+        </ModalBodi>
         <ModalFooter>
           <UIButton>Играть</UIButton>
-          <UIButton>Играть</UIButton>
+          <UIButton onClick={() => setIsOpen(false)}>Выйти</UIButton>
         </ModalFooter>
         <button className={styles.BTNClose} onClick={() => setIsOpen(false)}>
           <CrossIcon />

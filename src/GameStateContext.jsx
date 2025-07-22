@@ -5,7 +5,7 @@ import { getNextMove, computeWinner } from "./utils";
 export const GameStateContext = createContext();
 
 export function GameStateProvider({ children }) {
-  const [playerCount] = useState(4);
+  const [playerCount] = useState(2);
   const [{ cells, currentMove, playersIsTimeOver }, setCurrentMove] = useState({
     cells: new Array(10 * 10).fill(null),
     currentMove: GAME_SIMBOLS.CROSS,

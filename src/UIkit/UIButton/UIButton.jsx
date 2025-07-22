@@ -5,6 +5,10 @@ import clsx from "clsx";
 
 // }
 
-export const UIButton = ({ children, className }) => {
-  return <button className={clsx(className, styles.button)}>{children}</button>;
+export const UIButton = ({ children, className, onClick }) => {
+  return (
+    <button onClick={onClick} className={clsx(className, styles.button)}>
+      {children}
+    </button>
+  );
 };

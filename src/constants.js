@@ -1,9 +1,11 @@
+import { CrossIcon } from "./components/Icon";
 export const GAME_SIMBOLS = {
-  CROSS: "x",
-  ZERO: "o",
-  ZET: 'z',
-  ALFA: 'a',
+  CROSS: "src/img/cross.svg",
+  ZERO: "src/img/circle.svg",
+  ZET: "src/img/square.svg",
+  ALFA: "src/img/triangle.svg",
 };
+
 
 export const MOVE_ORDER = [
     GAME_SIMBOLS.CROSS,
